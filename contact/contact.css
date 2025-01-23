@@ -1,0 +1,161 @@
+.contact {
+  margin: 0 auto 91px auto;
+  padding-top: 120px;
+  max-width: 1140px;
+}
+
+.contact__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.contact__image {
+  padding-left: 80px;
+}
+
+.contact__form-container {
+  width: 585px;
+}
+
+.contact__badge {
+  position: relative;
+}
+
+.contact__badge-img {
+  position: absolute;
+  top: 25%;
+}
+
+.contact__badge-text {
+  margin: 6px 14px;
+  position: absolute;
+  z-index: 1;
+  font-weight: 700;
+}
+
+.contact__title {
+  margin: 46px 0 0 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.contact__subtitle {
+  margin: 16px 0 20px 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.contact__socials {
+  height: 30px;
+}
+
+.middle-link {
+  margin: 0 20px;
+}
+
+.contact__text {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.contact__form-group {
+  display: flex;
+}
+
+.contact__fieldset {
+  position: relative;
+  padding: 13px 0 16px 20px;
+  width: 280px;
+  height: 22px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.contact__fieldset input {
+  all: unset;
+  width: 246px;
+  position: absolute;
+  top: 9%;
+  color: black;
+}
+
+.first--fieldset {
+  margin-right: 25px;
+}
+
+fieldset {
+  border: 1px solid black;
+}
+
+input::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.input-large {
+  position: relative;
+  margin: 20px 0;
+  height: 190px;
+}
+
+.input-large textarea {
+  all: unset;
+  position: absolute;
+  height: 180px;
+  width: 566px;
+  top: 0%;
+  color: black;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.contact__submit-button {
+  height: 45px;
+  width: 219px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 165, 1, 1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.contact__submit-button:hover {
+  opacity: 90%;
+}
+
+@media (max-width: 1080px) {
+  .contact__image {
+    display: none;
+  }
+
+  .contact__form-container {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact__form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__form-container {
+    margin: 0 10px;
+  }
+
+  .contact__fieldset {
+    margin-right: 0px;
+    width: 330px;
+  }
+
+  .input-large textarea {
+    height: 178px;
+    width: 306px;
+  }
+}

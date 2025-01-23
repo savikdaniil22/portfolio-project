@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__socials">
+        <a href="https://www.facebook.com/" target="_blank" class="contact__social-link facebook--link">
+          <img class="header__socials-icon" src="./images/header/facebook-icon.svg" alt="Facebook icon" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="contact__social-link">
+          <img
+            class="header__socials-icon header__socials-icon--instagramm"
+            src="./images/header/instagram-icon.svg"
+            alt="Instagram icon" />
+        </a>
+        <a href="https://github.com/" target="_blank" class="contact__social-link">
+          <img class="header__socials-icon" src="./images/header/github-icon.svg" alt="GitHub icon" />
+        </a>
+        <img class="header__socials-line" src="./images/header/divider-line.svg" alt="Divider line" />
+        <p class="header__socials-text">Социальные сети</p>
+      </div>
+      <div class="header__content">
+        <div class="header__intro">
+          <h2 class="header__name">Меня зовут Александра Смит</h2>
+          <img class="header__circle" src="./images/header/header-circle.png" alt="circle" />
+        </div>
+        <h1 class="header__title">Я web-разработчик из города Москва</h1>
+        <div class="header__buttons">
+          <button class="header__button">Портфолио</button>
+          <button class="header__button">Про меня</button>
+        </div>
+      </div>
+      <button class="header__burger">
+        <img src="./images/header/burger-icon.svg" alt="Menu" />
+      </button>
+    </header>
+    <main id="main-content"></main>
+    <script src="js/main.js" defer></script>
+    <script>
+      fetch("./experience/experience.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Ошибка загрузки HTML файла");
+          }
+          return response.text();
+        })
+        .then((html) => {
+          document.getElementById("main-content").insertAdjacentHTML("afterbegin", html);
+
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = "./experience/experience.css";
+          document.head.appendChild(link);
+        })
+        .catch((error) => {
+          console.error("Ошибка:", error);
+        });
+      fetch("./contact/contact.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Ошибка загрузки HTML файла");
+          }
+          return response.text();
+        })
+        .then((html) => {
+          document.getElementById("main-content").insertAdjacentHTML("beforeend", html);
+
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = "./contact/contact.css";
+          document.head.appendChild(link);
+        })
+        .catch((error) => {
+          console.error("Ошибка:", error);
+        });
+    </script>
+  </body>
+</html>

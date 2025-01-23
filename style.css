@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../images/header/header-background.jpg");
+  background-size: cover;
+  background-position: 50px -120px;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__content {
+  max-width: 1140px;
+  width: 1140px;
+}
+
+.header__intro {
+  padding-top: 206px;
+}
+
+.header__name {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.header__circle {
+  position: absolute;
+  top: 25%;
+}
+
+.header__title {
+  margin: 3px 0 25px 0;
+  width: 532px;
+  height: 129px;
+  font-size: 48px;
+}
+
+.header__button {
+  padding: 0;
+  width: 135px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  background: rgba(255, 165, 1, 1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header__socials {
+  position: relative;
+  width: 24px;
+  height: 338px;
+  display: flex;
+  flex-direction: column;
+  margin: 226px 0 236px 50px;
+}
+
+.header__socials-icon--instagramm {
+  margin: 10px 0;
+}
+
+.header__socials-line {
+  height: 70px;
+  margin: 15px 0;
+}
+
+.header__socials-text {
+  margin: 0px;
+  transform: rotate(-90deg);
+  height: 23px;
+  width: 148px;
+  transform-origin: top left;
+  position: absolute;
+  top: 105.5%;
+  font-weight: 700;
+}
+
+.header__burger {
+  margin: 20px 30px 0 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 21px;
+}
+
+.main-content {
+  width: 1140px;
+}
+
+@media (max-width: 1440px) {
+  .header {
+    background-position: 50px -1px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header__content {
+    margin-left: 10px;
+  }
+  .header__socials {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .header {
+    background-position: -320px 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__burger {
+    margin: 5px 5px 0 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    background-position: -450px 0px;
+  }
+
+  .header__title {
+    margin-top: 8px;
+    width: 300px;
+    height: 77px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    height: 640px;
+    width: 380px;
+    background-position: -300px 0px;
+  }
+
+  .header__circle {
+    top: 31.2%;
+  }
+}

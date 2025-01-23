@@ -1,0 +1,83 @@
+<section class="contact">
+  <div class="contact__container">
+    <img class="contact__image" src="/images/concact/photo.png" alt="Свяжитесь со мной" />
+
+    <div class="contact__form-container">
+      <div class="contact__badge">
+        <img class="contact__badge-img" src="/images/header/header-circle.png" />
+        <span class="contact__badge-text">Контакты</span>
+      </div>
+      <h2 class="contact__title">Свяжитесь со мной</h2>
+      <img class="contact__title-line" src="/images/experience/underline.jpg" alt="Underline" />
+      <p class="contact__subtitle">Любым удобным для вас способом:</p>
+      <div class="contact__socials">
+        <a href="https://www.facebook.com/" target="_blank" class="contact__social-link">
+          <img src="/images/concact/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://web.telegram.org/k/" target="_blank" class="contact__social-link middle-link">
+          <img src="/images/concact/telegram.svg" alt="Telegram" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="contact__social-link">
+          <img src="/images/concact/instagram.svg" alt="Instagram" />
+        </a>
+      </div>
+      <p class="contact__text">Или оставьте ваши данные и я сама вам напишу:</p>
+      <form class="contact__form" id="contactForm">
+        <div class="contact__form-group">
+          <fieldset class="contact__fieldset first--fieldset">
+            <legend class="contact__legend">Ваше имя</legend>
+            <input type="text" id="name" name="name" placeholder="Иван" required />
+          </fieldset>
+          <fieldset class="contact__fieldset">
+            <legend class="contact__legend">Ваша почта</legend>
+            <input type="email" id="email" name="email" required />
+          </fieldset>
+        </div>
+
+        <fieldset class="contact__input-container input-large">
+          <legend class="contact__legend">Ваше сообщение</legend>
+          <textarea id="message" name="message" wrap="hard" required></textarea>
+        </fieldset>
+        <button type="submit" class="contact__submit-button">Отправить сообщение</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Скрипт для обработки формы -->
+<script>
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      message: document.getElementById("message").value.trim(),
+    };
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Пожалуйста, заполните все поля!");
+      return;
+    }
+
+    fetch("https://fake-server-url.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Ошибка отправки данных!");
+        return response.json();
+      })
+      .then((data) => {
+        alert("Ваше сообщение успешно отправлено!");
+        contactForm.reset();
+      })
+      .catch((error) => {
+        alert("Не удалось отправить сообщение. Попробуйте снова.");
+        console.error(error);
+      });
+  });
+</script>
